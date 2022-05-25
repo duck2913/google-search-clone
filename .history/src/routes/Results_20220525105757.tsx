@@ -1,4 +1,5 @@
 const Results = () => {
-	return <div className="p-4"></div>;
+	return <div>Helloooo</div>;
 };
+
 export default Results;
