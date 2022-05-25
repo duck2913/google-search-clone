@@ -15,7 +15,7 @@ root.render(
 				<Route path="/" element={<App />}>
 					<Route path="/images" element={<Images />}></Route>
 					<Route path="/video" element={<Video />}></Route>
-					<Route path="/search" element={<Search />}></Route>
+					<Route path="/search" element={<Searchrch />}></Route>
 				</Route>
 			</Routes>
 		</BrowserRouter>

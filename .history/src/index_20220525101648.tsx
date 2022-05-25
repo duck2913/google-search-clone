@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ResultContextProvider from "./contexts/ResultContextProvider";
 import Images from "./routes/Images";
 import Video from "./routes/Video";
-import Search from "./routes/Search";
+import Search from "./components/Search";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
