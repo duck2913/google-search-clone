@@ -9,10 +9,10 @@ const Images = () => {
 	}, [getResults, searchTerm]);
 
 	return (
-		<div className="grid grid-cols-6 gap-5 p-10">
-			{results?.map(({ image: { src }, link }, index) => (
+		<div className="grid grid-cols-6">
+			{results?.map(({ image, link }, index) => (
 				<div key={index}>
-					<img src={src} alt="" loading="lazy" />
+					<img src={link} alt="image" />
 				</div>
 			))}
 		</div>

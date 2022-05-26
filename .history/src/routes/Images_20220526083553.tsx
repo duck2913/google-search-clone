@@ -8,15 +8,7 @@ const Images = () => {
 		getResults("/image", searchTerm);
 	}, [getResults, searchTerm]);
 
-	return (
-		<div className="grid grid-cols-6 gap-5 p-10">
-			{results?.map(({ image: { src }, link }, index) => (
-				<div key={index}>
-					<img src={src} alt="" loading="lazy" />
-				</div>
-			))}
-		</div>
-	);
+	return <div className="grid grid-cols-6">{}</div>;
 };
 
 export default Images;
