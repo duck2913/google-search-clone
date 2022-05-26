@@ -20,10 +20,10 @@ function ResultContextProvider({ children }) {
 			},
 		});
 		const data = await res.json();
-		console.log(data);
+		console.log("🚀 -> data", data);
 		if (type === "/search") setResults(data.results);
 		if (type === "/news") setResults(data.entries);
-		if (type === "/image" || type === "/video") setResults(data.image_results);
+		setResults(data);
 		setIsLoading(false);
 	}, []);
 

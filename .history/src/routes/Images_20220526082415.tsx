@@ -2,11 +2,7 @@ import { useContext, useEffect } from "react";
 import { ResultContext } from "../contexts/ResultContextProvider";
 
 const Images = () => {
-	const { getResults, searchTerm } = useContext(ResultContext);
-
-	useEffect(() => {
-		getResults("/image", searchTerm);
-	}, [getResults, searchTerm]);
+	const { setResults } = useContext(ResultContext);
 
 	return <div>Images</div>;
 };

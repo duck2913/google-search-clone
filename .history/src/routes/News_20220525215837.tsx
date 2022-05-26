@@ -5,19 +5,12 @@ const News = () => {
 	const { searchTerm, getResults, results } = useContext(ResultContext);
 	useEffect(() => {
 		getResults("/news", searchTerm);
-	}, [searchTerm, getResults]);
-
+	}, []);
 	return (
 		<div className="grid grid-cols-2 p-10">
-			{results &&
-				results.map(({ title, link, id }) => (
-					<div key={id} className="p-5">
-						<a href={link} className="text-2xl text-blue-500 dark:text-blue-300">
-							{title}
-						</a>
-						<p className="text-sm break-words">{link}</p>
-					</div>
-				))}
+			{results?.entries.map((item, index) => (
+				<div></div>
+			))}
 		</div>
 	);
 };

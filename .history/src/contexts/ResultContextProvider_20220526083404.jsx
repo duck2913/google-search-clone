@@ -23,7 +23,10 @@ function ResultContextProvider({ children }) {
 		console.log(data);
 		if (type === "/search") setResults(data.results);
 		if (type === "/news") setResults(data.entries);
+		// set results for video and images cases
 		if (type === "/image" || type === "/video") setResults(data.image_results);
+		if (type === "/video") {
+		}
 		setIsLoading(false);
 	}, []);
 

@@ -6,7 +6,7 @@ export const ResultContext = createContext(null);
 function ResultContextProvider({ children }) {
 	const [results, setResults] = useState();
 	const [isLoading, setIsLoading] = useState(false);
-	const [searchTerm, setSearchTerm] = useState("google");
+	const [searchTerm, setSearchTerm] = useState("");
 
 	const getResults = useCallback(async (type, searchTerm) => {
 		setIsLoading(true);
@@ -20,12 +20,10 @@ function ResultContextProvider({ children }) {
 			},
 		});
 		const data = await res.json();
-		console.log(data);
-		if (type === "/search") setResults(data.results);
-		if (type === "/news") setResults(data.entries);
-		if (type === "/image" || type === "/video") setResults(data.image_results);
+		console.log("🚀 -> data", data);
+		setResults(data);
 		setIsLoading(false);
-	}, []);
+	});
 
 	const ctx = {
 		results: results,

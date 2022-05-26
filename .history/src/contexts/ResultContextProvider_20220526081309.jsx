@@ -14,16 +14,14 @@ function ResultContextProvider({ children }) {
 			method: "GET",
 			headers: {
 				"X-User-Agent": "desktop",
-				"X-Proxy-Location": "EU",
+				"X-Proxy-Location": "VN",
 				"X-RapidAPI-Host": "google-search3.p.rapidapi.com",
 				"X-RapidAPI-Key": "e5a0e50ddbmsh09d456ae545928ap1e085fjsn4cf30a7b8d04",
 			},
 		});
 		const data = await res.json();
-		console.log(data);
-		if (type === "/search") setResults(data.results);
-		if (type === "/news") setResults(data.entries);
-		if (type === "/image" || type === "/video") setResults(data.image_results);
+		console.log("🚀 -> data", data);
+		setResults(data);
 		setIsLoading(false);
 	}, []);
 

@@ -5,7 +5,7 @@ const Images = () => {
 	const { getResults, searchTerm } = useContext(ResultContext);
 
 	useEffect(() => {
-		getResults("/image", searchTerm);
+		getResults("/images", searchTerm);
 	}, [getResults, searchTerm]);
 
 	return <div>Images</div>;

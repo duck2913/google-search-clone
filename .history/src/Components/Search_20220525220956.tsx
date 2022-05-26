@@ -13,6 +13,7 @@ const Search = () => {
 
 	function submitHandler(event: FormEvent) {
 		event.preventDefault();
+		ctx.getResults("/search", ctx.searchTerm);
 		navigate("/search");
 	}
 

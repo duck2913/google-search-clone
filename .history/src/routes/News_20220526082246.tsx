@@ -12,9 +12,7 @@ const News = () => {
 			{results &&
 				results.map(({ title, link, id }) => (
 					<div key={id} className="p-5">
-						<a href={link} className="text-2xl text-blue-500 dark:text-blue-300">
-							{title}
-						</a>
+						<a className="text-2xl text-blue-500 dark:text-blue-300">{title}</a>
 						<p className="text-sm break-words">{link}</p>
 					</div>
 				))}
