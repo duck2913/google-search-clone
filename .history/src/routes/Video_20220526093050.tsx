@@ -6,7 +6,7 @@ const Video = () => {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			searchTerm && getResults("/video", searchTerm);
+			getResults("/video", searchTerm);
 		}, 500);
 
 		return () => {

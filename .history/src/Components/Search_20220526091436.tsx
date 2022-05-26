@@ -32,6 +32,7 @@ const Search = () => {
 					onChange={inputChangeHandler}
 					value={ctx.searchTerm}
 				/>
+				<button>X</button>
 			</div>
 			<div className="nav-links flex gap-8 mt-4">
 				<NavLink

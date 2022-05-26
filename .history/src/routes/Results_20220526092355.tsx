@@ -5,13 +5,7 @@ const Results = () => {
 	const { results, searchTerm, getResults } = useContext(ResultContext);
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			searchTerm && getResults("/search", searchTerm);
-		}, 500);
-
-		return () => {
-			clearTimeout(timer);
-		};
+		getResults("/search", searchTerm);
 	}, [searchTerm, getResults]);
 
 	return (

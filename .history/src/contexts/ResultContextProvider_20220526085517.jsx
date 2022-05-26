@@ -6,7 +6,7 @@ export const ResultContext = createContext(null);
 function ResultContextProvider({ children }) {
 	const [results, setResults] = useState();
 	const [isLoading, setIsLoading] = useState(false);
-	const [searchTerm, setSearchTerm] = useState("");
+	const [searchTerm, setSearchTerm] = useState("google");
 
 	const getResults = useCallback(async (type, searchTerm) => {
 		setIsLoading(true);

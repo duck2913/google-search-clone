@@ -5,7 +5,7 @@ const News = () => {
 	const { searchTerm, getResults, results } = useContext(ResultContext);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			searchTerm && getResults("/news", searchTerm);
+			getResults("/search", searchTerm);
 		}, 500);
 
 		return () => {

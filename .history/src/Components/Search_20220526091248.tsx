@@ -23,7 +23,7 @@ const Search = () => {
 	};
 	return (
 		<form className="wrapper flex flex-col" onSubmit={submitHandler}>
-			<div className="search-bar bg-gray-50 flex items-center rounded-3xl px-4 py-2 gap-2 dark:text-gray-700 ">
+			<div className="search-bar bg-gray-50 flex items-center rounded-3xl px-4 py-2 gap-2 justify-between dark:text-gray-700 ">
 				<p>🔭</p>
 				<input
 					type="text"
@@ -32,6 +32,7 @@ const Search = () => {
 					onChange={inputChangeHandler}
 					value={ctx.searchTerm}
 				/>
+				<button>X</button>
 			</div>
 			<div className="nav-links flex gap-8 mt-4">
 				<NavLink

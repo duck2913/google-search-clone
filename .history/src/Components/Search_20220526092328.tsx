@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Search = () => {
 	const navigate = useNavigate();
 	const ctx = useContext(ResultContext);
+    
 
 	function inputChangeHandler(event) {
 		ctx.setSearchTerm(event.target.value);
@@ -32,6 +33,14 @@ const Search = () => {
 					onChange={inputChangeHandler}
 					value={ctx.searchTerm}
 				/>
+				<button
+					className="ml-auto"
+					onClick={() => {
+						ctx.setSearchTerm("");
+					}}
+				>
+					X
+				</button>
 			</div>
 			<div className="nav-links flex gap-8 mt-4">
 				<NavLink

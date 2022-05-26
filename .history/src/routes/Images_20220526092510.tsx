@@ -6,7 +6,7 @@ const Images = () => {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			searchTerm && getResults("/image", searchTerm);
+			getResults("/image", searchTerm);
 		}, 500);
 
 		return () => {

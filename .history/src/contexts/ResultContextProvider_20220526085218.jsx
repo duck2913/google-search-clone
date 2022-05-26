@@ -6,7 +6,7 @@ export const ResultContext = createContext(null);
 function ResultContextProvider({ children }) {
 	const [results, setResults] = useState();
 	const [isLoading, setIsLoading] = useState(false);
-	const [searchTerm, setSearchTerm] = useState("");
+	const [searchTerm, setSearchTerm] = useState("google");
 
 	const getResults = useCallback(async (type, searchTerm) => {
 		setIsLoading(true);
@@ -21,7 +21,7 @@ function ResultContextProvider({ children }) {
 		});
 		const data = await res.json();
 		console.log(data);
-		if (type === "/search" || type === "/video") setResults(data.results);
+		if (type === "/search") setResults(data.results);
 		if (type === "/news") setResults(data.entries);
 		if (type === "/image") setResults(data.image_results);
 		setIsLoading(false);

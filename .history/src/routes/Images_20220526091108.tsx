@@ -5,13 +5,7 @@ const Images = () => {
 	const { getResults, searchTerm, results } = useContext(ResultContext);
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			searchTerm && getResults("/image", searchTerm);
-		}, 500);
-
-		return () => {
-			clearTimeout(timer);
-		};
+		getResults("/image", searchTerm);
 	}, [getResults, searchTerm]);
 
 	return (

@@ -5,22 +5,16 @@ const Images = () => {
 	const { getResults, searchTerm, results } = useContext(ResultContext);
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			searchTerm && getResults("/image", searchTerm);
-		}, 500);
-
-		return () => {
-			clearTimeout(timer);
-		};
+		getResults("/image", searchTerm);
 	}, [getResults, searchTerm]);
 
 	return (
-		<div className="grid grid-cols-6 gap-5">
-			{results?.map(({ image, link }, index) => (
+		<div className="grid grid-cols-6 gap-5 p-10">
+			{/* {results?.map(({ image: { src } }, index) => (
 				<div key={index}>
-					<img src={image.src} alt="" loading="lazy" />
+					<img src={src} alt="" loading="lazy" />
 				</div>
-			))}
+			))} */}
 		</div>
 	);
 };

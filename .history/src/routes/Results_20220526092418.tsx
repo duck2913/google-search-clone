@@ -6,12 +6,8 @@ const Results = () => {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			searchTerm && getResults("/search", searchTerm);
+			getResults("/search", searchTerm);
 		}, 500);
-
-		return () => {
-			clearTimeout(timer);
-		};
 	}, [searchTerm, getResults]);
 
 	return (

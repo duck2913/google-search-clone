@@ -32,6 +32,14 @@ const Search = () => {
 					onChange={inputChangeHandler}
 					value={ctx.searchTerm}
 				/>
+				<button
+					className="ml-auto"
+					// onClick={() => {
+					// 	ctx.setSearchTerm("");
+					// }}
+				>
+					X
+				</button>
 			</div>
 			<div className="nav-links flex gap-8 mt-4">
 				<NavLink

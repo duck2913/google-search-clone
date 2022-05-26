@@ -6,7 +6,7 @@ const Video = () => {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			searchTerm && getResults("/video", searchTerm);
+			getResults("/video", searchTerm);
 		}, 500);
 
 		return () => {
@@ -18,7 +18,7 @@ const Video = () => {
 		<div className="p-10 grid-cols-2 grid gap-10">
 			{results.map(
 				(video, index) =>
-					ReactPlayer.canPlay(video.additional_links?.[0].href) && (
+					ReactPlayer.canPlay(video) && (
 						<ReactPlayer key={index} controls url={video.additional_links?.[0].href} />
 					),
 			)}

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FormEvent, useContext } from "react";
+import { FormEvent, useContext, useEffect } from "react";
 import { ResultContext } from "../contexts/ResultContextProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -7,9 +7,7 @@ const Search = () => {
 	const navigate = useNavigate();
 	const ctx = useContext(ResultContext);
 
-	function inputChangeHandler(event) {
-		ctx.setSearchTerm(event.target.value);
-	}
+    useEffect(()=>{},[])
 
 	function submitHandler(event: FormEvent) {
 		event.preventDefault();
@@ -29,9 +27,16 @@ const Search = () => {
 					type="text"
 					className="bg-gray-50 focus:outline-none"
 					placeholder="type to search..."
-					onChange={inputChangeHandler}
 					value={ctx.searchTerm}
 				/>
+				<button
+					className="ml-auto"
+					onClick={() => {
+						ctx.setSearchTerm("");
+					}}
+				>
+					X
+				</button>
 			</div>
 			<div className="nav-links flex gap-8 mt-4">
 				<NavLink
